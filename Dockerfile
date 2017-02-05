@@ -5,13 +5,13 @@ MAINTAINER okisanjp
 RUN yum -y update && yum clean all
 
 # localize
-ENV LANG=ja_JP.UTF-8 \
-		LC_ALL=ja_JP.UTF-8 \
-		LANGUAGE=ja_JP:ja
+ENV LANG="ja_JP.UTF-8" \
+		LC_ALL="ja_JP.UTF-8" \
+		LANGUAGE="ja_JP:ja"
 		
-RUN yum -y reinstall glibc-common \
-		localedef -f UTF-8 -i ja_JP ja_JP.UTF-8 \
-		unlink /etc/localtime \
+RUN yum -y reinstall glibc-common &&\
+		localedef -f UTF-8 -i ja_JP ja_JP.UTF-8 &&\
+		unlink /etc/localtime &&\
 		ln -s /usr/share/zoneinfo/Japan /etc/localtime
 
 # install some tools
