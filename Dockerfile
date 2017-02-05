@@ -14,7 +14,7 @@ RUN yum -y reinstall glibc-common \
 		unlink /etc/localtime \
 		ln -s /usr/share/zoneinfo/Japan /etc/localtime
 
-# install man
+# install some tools
 RUN yum -y --setopt=tsflags='' install \
 		man-pages \
 		man-pages-ja \
