@@ -1,5 +1,5 @@
 FROM centos:7
-LABEL  maintainer "okisanjp <okisan.jp@gmail.com>"
+LABEL maintainer "okisanjp <okisan.jp@gmail.com>"
 
 # yum update
 RUN yum -y update && yum clean all
